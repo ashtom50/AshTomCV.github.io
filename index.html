@@ -770,6 +770,106 @@
 									</div>
 								</div>
 							</div>
+							
+							<!-- work item 3DPrinter -->
+							<div class="col col-d-6 col-t-6 col-m-12 grid-item personal border-line-h">
+								<div class="box-item">
+									<div class="image">
+										<a href="#popup-9" class="has-popup-media">
+											<img src="images/works/3d printer.jpg" alt="" />
+											<span class="info">
+												<span class="ion ion-images"></span>
+											</span>
+										</a>
+									</div>
+									<div class="desc">
+										<a href="#popup-9" class="name has-popup-media">3dPrinter</a>
+										<div class="category">Personal</div>
+										
+										
+									</div>
+									<div id="popup-9" class="popup-box mfp-fade mfp-hide">
+										<div class="personal">
+											<div class="image">
+												<img src="images/works/3d printer.jpg" alt="">
+											</div>
+											<div class="desc">
+												<div class="post-box">
+													<h1>3D Printer</h1>
+													<div class="blog-detail">Personal</div>
+													<div class="blog-content">
+														<ul class="list-style">
+															<li>Setup a Raspberry Pi 4 as a Plex media server.</li>
+															<li>Designed and 3D printed an enclosure.</li>
+															<li>Added a power button and a temperature controlled cooling fan.</li>
+														</ul>
+														<h2>
+															Why Bother?
+														</h2>
+														<p>
+															Like many people I have a huge collection of old DVDs and some Blu-Rays from the days before streaming. 
+															Now that we can watch a huge selection of films and TV shows on Netflix by 
+															simply navigating the TV with a remote, DVDs have become inconvenient.
+														</p>
+														<p>
+															To solve this I began the long and slow process of ripping my disks to my PCs hard drive, and then 
+															copied across a collection of them to a USB drive connected to my router. This gave me easy access 
+															to a small selection of my content using KODI anywhere in my house I could get the app. While this 
+															proved the concept worked, I have a few terabytes of media and so a USB drive severely restricted 
+															the amount of content I had easy access too.
+														</p>
+														<h2>
+															Plex
+														</h2>
+														<p>
+															Plex allows its users to host their own server with their own content just like a personal Netflix. 
+															I installed Plex on a Raspberry Pi4 as it is powerful enough to transcode 720p video, which is 
+															beyond DVD quality and is very low power, making me feel less guilty about leaving it on all the time. 
+															OpenMediaVault was installed initially to setup the two external hard drives that I would be storing 
+															my content on. The custom Raspberry Pi installation of Plex was then setup and configured to look to 
+															one of my hard drives for movies and the other for TV.
+														</p>
+														<p>
+															The Pi and the two hard drives were initially just sat on a shelf in the open but I wanted the mess 
+															of wires to be a bit neater and the Pi protected. I then decided to house everything inside the shell 
+															of an old DVD player that no longer worked, although the lack of ventilation meant that just heavy work 
+															loads both the Pi and the HDDs were getting much hotter than I liked. One afternoon I decided that it 
+															was time to design and build a custom case to hold everything with cooling in mind. I settled on a 
+															vertical design with a fan flowing onto the ends of all 3 main components. This allows for excellent 
+															airflow into the case, with slots on the sides and holed text on the top to vent out hot air. The 
+															printing took 24 hours on my Ender 3 and the components fit perfectly. The only issue encountered was 
+															that my powered USB hub that the case was designed to hold decided to fail as I was setting everything 
+															up. Rather than go for another cheap unknown brand I opted for a Sabrent model that didn't fit as nicely 
+															but I felt would be more reliable.
+														</p>
+														<p>
+															With everything back up and running as before it was time to add a power button for easy shutdowns when 
+															not needed and a temperature controlled fan. The power button was connected up to GPIO pins 5 and 6 and 
+															takes advantage of the Pi 4s ability to wake when these two pins are shorted. A python script in the Cron 
+															Tab, ran at startup, ensured that a simple shutdown command was issued when the button was pressed during 
+															normal operation. This ensured that the Pi is always shutdown correctly and helps avoid SD card corruption. 
+															The fan was connected up with a transistor and another python script was used to turn the fan on when 
+															temperatures reach 55 degrees and and turn it back off when cooled to 45 degrees. This keeps temperatures 
+															under control without having a fan whirling all day long.
+														</p>
+														<h2>
+															Future
+														</h2>
+														<p>
+															The long term goal for this project is to buy a more powerful NAS that I can fit multiple 3.5 HDDs into. 
+															This would allow me cheaper storage to setup a raid configuration to better to protect my data. The 
+															improved power will help with 4K playback which is a bit beyond the capabilities of the little Raspberry Pi.
+														</p>
+
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 
 							
 
