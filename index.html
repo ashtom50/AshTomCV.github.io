@@ -139,25 +139,25 @@
 						<li class="active">
 							<a href="#about-card">
 								<span class="icon ion-person"></span>
-								<span class="link">About</span>
+								<span class="link">About </span>
 							</a>
 						</li>
 						<li>
 							<a href="#resume-card">
 								<span class="icon ion-android-list"></span>
-								<span class="link">Resume</span>
+								<span class="link">CV </span>
 							</a>
 						</li>
 						<li>
 							<a href="#works-card">
 								<span class="icon ion-paintbrush"></span>
-								<span class="link">Projects</span>
+								<span class="link">Projects </span>
 							</a>
 						</li>
 						<li>
 							<a href="#contacts-card">
 								<span class="icon ion-at"></span>
-								<span class="link">Contact</span>
+								<span class="link">Contact </span>
 							</a>
 						</li>
 					</ul>
@@ -382,7 +382,7 @@
 			</div>
 
 			<!--
-				Card - Resume
+				Card - CV
 			-->
 			<div class="card-inner" id="resume-card">
 				<div class="card-wrap">
@@ -393,7 +393,7 @@
 					<div class="content resume">
 
 						<!-- title -->
-						<div class="title">Resume</div>
+						<div class="title">CV </div>
 
 						<!-- content -->
 						<div class="row">
@@ -626,7 +626,7 @@
 								<div class="box-item">
 									<div class="image">
 										<a href="#popup-14" class="has-popup-media">
-											<img src="images/works/DSSC Main.jpg" alt="" />
+											<img src="images/works/Arduino.jpg" alt="" />
 											<span class="info">
 												<span class="ion ion-images"></span>
 											</span>
@@ -639,7 +639,7 @@
 									<div id="popup-14" class="popup-box mfp-fade mfp-hide">
 										<div class="personal">
 											<div class="image">
-												<img src="images/works/DSSC Main.jpg" alt="">
+												<img src="images/works/Arduino.jpg" alt="">
 											</div>
 											<div class="desc">
 												<div class="post-box">
@@ -647,53 +647,44 @@
 													<div class="blog-detail">Project</div>
 													<div class="blog-content">
 														<ul class="list-style">
-															<li>Fabricate Dye Sensitized Solar Cell using Natural Dyes </li>
-															<li>Investigate a variety of different dyes and their effects on cell efficiency </li>
-															<li>Develop cosensitized cells by mixing compatible dyes and comparing their performance </li>
+															<li>Arduino and breakout boards used to measure current and voltage. </li>
+															<li>Data sent directly to excel for easy analysis. </li>
+															<li>Low cost solution for improved multimeter data collection. </li>
 														</ul>
-														<p>
-															For my final year project of my BSc Physics degree, I fabricated solar cells using natural dyes extracted from plants, fruits and vegatables.
-															The motivation being the project was to inestigate alternative methods for solar power generation which dont involve conventional silicon as this can be difficult to recycle at end of use.
-
-														</p>
-														<h2>
-															Benchmarking a silicon cell
-														</h2>
 														
 														<h2>
-															Extracting the Dyes
+															Why?
 														</h2>
 														<p>
-															The dyes were extracted from a range of plants, fruits and vegetables all based on success in previous research. 
-															The exact extraction method had to vary slightly based on the source of the dye but the base principle involved crushing the source in either water or ethanol and then filtering the solution.
+															A part of my final year project of my BSc Physics degree, I needed to test the efficiency of solar cells.
+															The conventional method of testing was to use two multimeters with one testing the voltage and another the current.
+															The resistance was then altered using a manual potentiometer and the current and voltage recored to eventually plot an I-V curve.
+															This method had several issues that I wanted to address,
+														</p>
+														<ul class="list-style">
+															<li>Data collection was very slow </li>
+															<li>Manual adjustment of potentiometer was inconsistent </li>
+															<li>Number of resistance steps was inconsistent </li>
+														</ul>
+														<p>
+															At this point a python script was tested to try and read the data from the multimeters but communication errors, software licencing and installation restrictions on university computers meant I needed to look for an alternative method.
+														</p>
+														<center><img src="images/works/Multimeter.jpg" alt="Multimeter" style = "width:50%"></center>
+														<h2>
+															Solution
+														</h2>
+														<p>
+															I soon realised that automating this task would make results more consistant and regardless of the testing time would free up my time in the lab for other jobs.
+															My first priority was to automate the potentiometer as this would at least make the results more consistent.
+															I originally considered using a motor to turn the manual potentiometer a set amount before I later discovered digital potentimeters.
+															The board used was a DS3502 by Adafruit, which had example libraries in the Arduino IDE and was simple to control with I2C.
+															With the resistance now changing by one step every few seconds it was realised that I would now need to quickly take a measurment inbetween steps.
+															The INA219 board was then purchased to measure the current and voltage output from the cells automatically.
+															It was then simple to create a script that would print current and voltage readings, reduce the resistance and then repeat.
+															The final step was to add a simple Excel integration which sent the data directly to a spreadsheet ready to be graphed.
 
-														</p>
-														<h2>
-															Analysing the Dye
-														</h2>
-														<p>
-															With the dye extracted it was then watered down and analysed using a spectrometer.
-															This allowed us to see the absorption of the dye over a range of wavelengths.
-															The absorption of the dye in the wavelengths of the sun are one of the most important properties of the dye so testing this at an early stage helped us rule out certain dye sources without making cells for them.
 
-														</p>
-														<h2>
-															Making the Cells
-														</h2>
-														<p>
-															To make the cells, a Titanium dioxide paste was made, and spread thinly onto a sheet of conductive glass. 
-															The cell was then heated on a hotplate and left to cool.
-															The extracted dye was then carefully dropped onto the Ti02 with a pipet and left to soak in.
-															The excess dye could then be rinced off and the cell is left to dry.
-															Finally a small amount of redox electrolyte solution is sandwiched between the Ti02 layer and another sheet of conductive glass, and the pieces are clamped together.
-														</p>
-														<h2>
-															Testing the Cells
-														</h2>
-														<p>
-															With the cells made they are then tested in the same setup as the initial silicon cell.
-															
-														</p>
+														
 
 													</div>
 													
@@ -703,6 +694,7 @@
 									</div>
 								</div>
 							</div>
+							
 
 			
 							<!-- work item Eink -->
@@ -1036,14 +1028,11 @@
 										</div>
 									</div>
 								</div>
-							</div
-
-							<div class="clear"></div>
+							</div	
 						</div>
-
 					</div>
-
 				</div>
+			</div>
 			</div>			
 
 			<!--
@@ -1063,7 +1052,7 @@
 						<!-- content -->
 						<div class="row">
 							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
-								<div class="map" id="map"></div>
+								
 								<div class="info-list">
 									<ul>
 										<li><strong>Address . . . . .</strong> Bristol, UK</li>
