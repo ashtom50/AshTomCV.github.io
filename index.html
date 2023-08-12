@@ -1094,13 +1094,13 @@
 													<div class="blog-detail">Personal</div>
 													<div class="blog-content">
 														<ul class="list-style">
-															<li>Investigate electronics and 3D printing technology </li>
-															<li>Create custom enclosures and other parts for Raspberry Pi projects </li>
-															<li>Create useful DIY home repairs and improvements </li>
+															<li>Learning how to integrate electronics with IOT </li>
+															<li>Experiment with basic motor control </li>
+															<li>Setup an automated train that will eventually go around a Christmas tree based on smart home parameters. </li>
 														</ul>
 														
 														<p>
-															Durin Covid I purchased a cheap second hand Hornby train set from Facebook Marketplace.
+															During Covid I purchased a cheap second hand Hornby train set from Facebook Marketplace.
 															After spending a surprisingly long time sanding rust off the tops of the tracks I was able to get the old train running again.
 															These old analogue train sets work by connecting a power supply to the tracks and varying the PWM.
 															This varied power causes the motor in the train to run faster or slower.
@@ -1109,46 +1109,46 @@
 
 														</p>
 														<h2>
-															Octoprint
+															Motor Control
 														</h2>
 														<p>
-															The standard method for getting print files onto the printer is by inserting an SD card.
-															While this isn't so bad when your PC and the printer are next to each other, it does become very inconvenient if you would like to setup the printer in another room.
-															The solution to this was Octoprint, a custom OS installed on a Raspberry Pi. 
-															Octoprint connects to the printer over USB and allows me to control the printer remotely, including monitoring its current state and sending print files to it directly over the network.
-															When coupled with a small camera, this allows me full control and monitoring of the printer from start to finish.
+															The microcontroller chosen was the ESP8266 due to its low cost, simple integration into home assistant and built in WIFI.
+															This was connected to a L298N motor controller, an IR sensor gate and a Neopixel light strip.
+															Everything was then mounted underneath the train tunnel to hide the wiring from view.
+
+														</p>
+
+														<center><img src="images/Projects/Tunnel underside.jpg" alt="what image shows" style = "width:50%"></center>
+
+
+														<h2>
+															ESPHome
+														</h2>
+														<p>
+															The ESP microcontroller was then flashed with ESPHome and added to home assistant.
+															The code was written in yaml to utilize the IR gate to detect when the train had passed through.
+															This allowed me to count the number of laps and with some careful timing meant I could make the train automatically stop at the station.
+															The motor controllers were set as a gradual 1-10 scale going forwards and a simple on/off reverse button.
+															Finally control of the Neopixel strip was added.
+															This was further synced with the IR gate to allow the lights to be turned on as the train enters the tunnel.
 
 														</p>
 														<h2>
-															RGB Lighting
+															Smart Home Integration
 														</h2>
 														<p>
-															I moved my printer to a cupboard for better climate control while printing.
-															The downside of this was the cupboard did not have any lighting and so the camera became useless.
-															Seeing the opportunity for an upgrade I decided to buy a new mainboard with Neopixel headers.
-															This allowed me to make some minor firmware changes and connect a strip of three Neopixels to the underside of the print head.
-															These illuminate the print bed and show the status of the printer through different colours with red using while heating the print bed and nozzle, while while printing, and green when printing is complete.
-
-														</p>
-														<h2>
-															Laser Module
-														</h2>
-														<p>
-															With a 3D printer being able to move over a surface with given X-Y coordinates theres no reason it can't be converted into a laser engraver.
-															I purchased a small laser and 3D printed a holder for it to attach onto the side of the print head. 
-															To power the laser I took advantage of the printers part cooling fan which uses PWM.
-															The fan wire was put through a switch to control whether power was sent to the fan or the laser, effectively giving me a print mode and a laser mode.
-															A website was used to convert an image into the required G-code the printer recognized and I was now able to laser engrave wood with my 3D printer.
+															With the train now fully controllable from within home assistant the control was expanded to google assistant.
+															Since I already had google connected to my home assistant server I simply needed to add the configuration to expose the new controls.
+															This allowed me to turn the train on/off with voice commands through my google home mini speakers.
 
 														</p>
 
-														<center><img src="images/Projects/3d printer.jpg" alt="what image shows" style = "width:50%"></center>
-														
 														<h2>
 															Future
 														</h2>
 														<p>
-															Short term improvements I would like to make to the printer are an upgraded camera for improved picture quality and a second lighting strip to better illuminate the whole print bed.
+															The core functionality of this project is completed with everything I wanted to achieve being successful.
+															Future improvements would be expanding the train control functionality and adding another sensor to make stopping at the station simpler and more reliable at different speeds.
 														</p>
 
 													</div>
