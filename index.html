@@ -1168,7 +1168,7 @@
 								<div class="box-item">
 									<div class="image">
 										<a href="#popup-8" class="has-popup-media">
-											<img src="images/Projects/Smart Hornby Train.png" alt="" />
+											<img src="images/Projects/Proxmox.png" alt="" />
 											<span class="info">
 												<span class="ion ion-images"></span>
 											</span>
@@ -1183,7 +1183,7 @@
 									<div id="popup-8" class="popup-box mfp-fade mfp-hide">
 										<div class="personal">
 											<div class="image">
-												<img src="images/Projects/Train Station.png" alt="">
+												<img src="images/Projects/Proxmox.png" alt="">
 											</div>
 											<div class="desc">
 												<div class="post-box">
@@ -1191,62 +1191,33 @@
 													<div class="blog-detail">Personal</div>
 													<div class="blog-content">
 														<ul class="list-style">
-															<li>Learning how to integrate electronics with IOT </li>
-															<li>Experiment with basic motor control </li>
-															<li>Setup an automated train that will eventually go around a Christmas tree based on smart home parameters. </li>
+															<li>Setup and maintain Virtual Machines and Linux Containers </li>
+															<li>Provide self hosted 24/7 services </li>
+															<li>Learn Proxmox and upgrade current hardware </li>
 														</ul>
 														
 														<p>
-															During Covid I purchased a cheap second hand Hornby train set from Facebook Marketplace.
-															After spending a surprisingly long time sanding rust off the tops of the tracks I was able to get the old train running again.
-															These old analogue train sets work by connecting a power supply to the tracks and varying the PWM.
-															This varied power causes the motor in the train to run faster or slower.
-															This made me wonder how difficult it would be to setup a WIFI enabled micro controller to control the power to the tracks, thus enabling me to control the train both from my phone and to even become a part of my smart home.
-
-
+															For a few years now I have run OpenMediaVault, Plex and Home Assistant across two Raspberry Pi 4's.
+															This was a brilliant starting point to get access to these platforms but when Plex starts to struggle with transcoding, and Home assistant starts to strugggle with multiple cameras its time to look at hardware upgrades.
 														</p>
 														<h2>
-															Motor Control
+															Choosing the Hardware
 														</h2>
 														<p>
-															The microcontroller chosen was the ESP8266 due to its low cost, simple integration into home assistant and built in WIFI.
-															This was connected to a L298N motor controller, an IR sensor gate and a Neopixel light strip.
-															Everything was then mounted underneath the train tunnel to hide the wiring from view.
+															Mini PCs had been on my radar for a while for there small form factor and their low current draw.
+															A lot of reviews pointed me towards the Intel N100 processor as being suitible for Plex and being easily compatible for Plex and Intel quick sync transcoding.
+															With the N100 having 4 cores and a low price tag it seemed a good starting point into virtualizing my setup.
+															An early consideration was to build a full size server PC that could hold multi 3.5 inch hard drives for Plex media storage.
+															This plan was eventually dropped due to the high upfront cost and the increased power consumption.
+															The mini PC is not suitable for hosting the media itself so it will be purely the brains while a dedicated NAS will be used in the future to add the storage.
+															
 
 														</p>
 
-														<center><img src="images/Projects/Tunnel underside.jpg" alt="what image shows" style = "width:50%"></center>
+														<center><img src="images/Projects/Beelink.jpg" alt="what image shows" style = "width:50%"></center>
 
 
-														<h2>
-															ESPHome
-														</h2>
-														<p>
-															The ESP microcontroller was then flashed with ESPHome and added to home assistant.
-															The code was written in yaml to utilize the IR gate to detect when the train had passed through.
-															This allowed me to count the number of laps and with some careful timing meant I could make the train automatically stop at the station.
-															The motor controllers were set as a gradual 1-10 scale going forwards and a simple on/off reverse button.
-															Finally control of the Neopixel strip was added.
-															This was further synced with the IR gate to allow the lights to be turned on as the train enters the tunnel.
-
-														</p>
-														<h2>
-															Smart Home Integration
-														</h2>
-														<p>
-															With the train now fully controllable from within home assistant the control was expanded to google assistant.
-															Since I already had google connected to my home assistant server I simply needed to add the configuration to expose the new controls.
-															This allowed me to turn the train on/off with voice commands through my google home mini speakers.
-
-														</p>
-
-														<h2>
-															Future
-														</h2>
-														<p>
-															The core functionality of this project is completed with everything I wanted to achieve being successful.
-															Future improvements would be expanding the train control functionality and adding another sensor to make stopping at the station simpler and more reliable at different speeds.
-														</p>
+														
 
 													</div>
 													
