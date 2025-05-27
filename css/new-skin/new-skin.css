@@ -2674,3 +2674,134 @@ a.next.page-numbers:hover {
 	    padding-top: 118px;
 	}
 }
+
+/* Tools & Technologies Section */
+.tools-item {
+    padding: 25px;
+    text-align: center;
+    height: 100%;
+}
+
+.tools-item .icon img {
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.tools-item .name {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.tools-item .desc {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* Self-Hosted Services Section */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.service-logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.service-logo:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+
+.service-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    filter: grayscale(80%) brightness(1);
+    transition: all 0.3s ease;
+}
+
+.service-logo:hover img {
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Company/Organization Logo Styles */
+.resume-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 15px;
+    padding: 15px 0;
+}
+
+/* Logo Container */
+.resume-item .logo-container {
+    flex: 0 0 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo Image */
+.resume-item .company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Date Styling */
+.resume-item .date {
+    flex: 0 0 auto;
+    font-size: 14px;
+    color: var(--text-secondary-color);
+}
+
+/* Job Title */
+.resume-item .name {
+    flex: 0 0 100%;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-left: 55px; /* logo width + gap */
+}
+
+/* Company Name */
+.resume-item .company {
+    flex: 0 0 100%;
+    font-size: 14px;
+    color: var(--text-secondary-color);
+    margin-left: 55px; /* logo width + gap */
+    margin-bottom: 5px;
+}
+
+/* Description */
+.resume-item p {
+    flex: 0 0 100%;
+    margin-left: 55px; /* logo width + gap */
+    margin-top: 5px;
+}
+
+/* Default Logo for organizations without image */
+.default-logo {
+    width: 40px;
+    height: 40px;
+    background: var(--active-color);
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
